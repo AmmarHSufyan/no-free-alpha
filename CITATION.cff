@@ -3,8 +3,9 @@ message: "If you use this research or code, please cite it as below."
 title: "No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors"
 type: software
 authors:
-  - alias: AmmarHSufyan
-version: 1.0.0
+  - family-names: AmmarHSufyan
+    alias: AmmarHSufyan
+version: 1.0.1
 date-released: 2026-10-27
 license: MIT
 repository-code: "https://github.com/AmmarHSufyan/no-free-alpha"
@@ -42,7 +43,8 @@ preferred-citation:
   type: report
   title: "No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors"
   authors:
-    - alias: AmmarHSufyan
+    - family-names: AmmarHSufyan
+    alias: AmmarHSufyan
   year: 2026
   month: 10
   url: "https://ammarhsufyan.github.io/no-free-alpha/"
