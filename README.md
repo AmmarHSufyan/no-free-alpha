@@ -1,5 +1,7 @@
 # No Free Alpha
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23680085.svg)](https://doi.org/10.5281/zenodo.23680085)
+
 **Is trading with AI, bots or copy trading profitable for retail crypto investors in 2026? We tested it with
 realistic fees and found no strategy that beat simply holding Bitcoin.**
 
@@ -14,7 +16,7 @@ This repository holds a research paper and all of its code. It is an end-to-end,
 Every strategy was backtested out of sample with exchange fees and slippage, and compared against buy-and-hold.
 
 📄 **Read the paper:** [web version](https://ammarhsufyan.github.io/no-free-alpha/) ·
-[Markdown](paper/no-free-alpha.md) · [PDF](docs/no-free-alpha.pdf)
+[Markdown](paper/no-free-alpha.md) · [PDF](docs/no-free-alpha.pdf) · [Zenodo (DOI 10.5281/zenodo.23680085)](https://doi.org/10.5281/zenodo.23680085)
 
 ![Copying Hyperliquid wallets chosen by four finders](paper/figures/fig2_copy_walkforward.png)
 
@@ -81,7 +83,8 @@ cached.
   author = {Sufyan, Ammar H.},
   year   = {2026},
   month  = {10},
-  url    = {https://github.com/AmmarHSufyan/no-free-alpha}
+  doi    = {10.5281/zenodo.23680085},
+  url    = {https://doi.org/10.5281/zenodo.23680085}
 }
 ```
 
