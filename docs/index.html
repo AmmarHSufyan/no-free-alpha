@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No Free Alpha: Do AI Trading Bots and Copy Trading Beat Holding Bitcoin? (2026 study)</title>
+<meta name="description" content="A cost-aware 2026 study of AI/LLM trading agents, crypto trading bots, Freqtrade strategies and Hyperliquid copy trading across 1.5 million wallets. After fees, none beat holding Bitcoin.">
+<meta name="keywords" content="AI trading, LLM trading agent, Claude trading bot, ChatGPT trading bot, crypto trading bot, algorithmic trading, backtesting, transaction costs, trading fees, copy trading, social trading, Hyperliquid, smart money, on-chain analytics, whale tracking, skill versus luck, false discovery rate, walk-forward analysis, Freqtrade, trend following, Bitcoin, cryptocurrency, quantitative finance, retail traders">
+<meta name="author" content="AmmarHSufyan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ammarhsufyan.github.io/no-free-alpha/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No Free Alpha: Do AI Trading Bots and Copy Trading Beat Holding Bitcoin? (2026 study)">
+<meta property="og:description" content="A cost-aware 2026 study of AI/LLM trading agents, crypto trading bots, Freqtrade strategies and Hyperliquid copy trading across 1.5 million wallets. After fees, none beat holding Bitcoin.">
+<meta property="og:url" content="https://ammarhsufyan.github.io/no-free-alpha/">
+<meta property="og:image" content="https://ammarhsufyan.github.io/no-free-alpha/figures/fig2_copy_walkforward.png">
+<meta property="og:site_name" content="No Free Alpha">
+<meta property="article:published_time" content="2026-10-27">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="No Free Alpha: Do AI Trading Bots and Copy Trading Beat Holding Bitcoin? (2026 study)">
+<meta name="twitter:description" content="A cost-aware 2026 study of AI/LLM trading agents, crypto trading bots, Freqtrade strategies and Hyperliquid copy trading across 1.5 million wallets. After fees, none beat holding Bitcoin.">
+<meta name="twitter:image" content="https://ammarhsufyan.github.io/no-free-alpha/figures/fig2_copy_walkforward.png">
+<meta name="citation_title" content="No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors">
+<meta name="citation_author" content="AmmarHSufyan">
+<meta name="citation_publication_date" content="2026/10/27">
+<meta name="citation_online_date" content="2026/10/27">
+<meta name="citation_technical_report_institution" content="Independent research">
+<meta name="citation_language" content="en">
+<meta name="citation_abstract" content="Products sold to retail traders in 2026 promise that automated strategies, large language model (LLM) agents and copy trading of on-chain &quot;smart money&quot; can beat the market. We test these promises with simulated capital on historical data. Every trade is charged realistic exchange fees and slippage, and every result is compared with buy-and-hold. We study five families of strategy: 1. five classic indicator strategies on 1-hour candles of five large cryptocurrencies (October 2024 to October 2026); 2. eleven published community strategies for the Freqtrade framework; 3. a pilot LLM trading agent: Claude, behind a tool-less, schema-constrained interface, reading anonymised candles; 4. copy trading of Hyperliquid perpetual-futures wallets. Leaders are chosen by four &quot;finders&quot;, one of them a principled skill finder that combines block-bootstrap tests, false-discovery-rate control and empirical-Bayes shrinkage. The copies are replayed walk-forward over 12 months with a 10-second delay, fees, slippage and funding, using the complete public fill ledger (457 days, 1,509,029 wallets); 5. a slow, volatility-scaled daily trend rotation over a point-in-time top-30 universe that includes delisted coins (2020 to 2026). After costs, no strategy beat holding Bitcoin over its full test window. - Costs: costs turned a +79% gross indicator strategy into −49%. - Copy trading: copying lost money with three of the four finders (−10.5% to −30.2%), against −19.1% for random wallets and −26.2% for Bitcoin. The exception (+10.9%) owed its gain to one cluster of related wallets, and its ranking failed on an independent pool. - Persistence: past copy profitability did not predict the next week (Spearman ρ = 0.04 over 33,927 wallet-weeks). Wallets that won more than 75% of their past weeks lost the most afterwards. - Trend rotation: the trend rotation cut the worst drawdown from −77% to −54%. But it compounded at 38.0% a year against 42.4% for Bitcoin, and in 2023 to 2026 it gave no drawdown protection at all. We conclude that what holds a retail participant back in 2026 is transaction costs and the difficulty of telling skill from luck, not a shortage of computing power or model intelligence.">
+<meta name="citation_pdf_url" content="https://ammarhsufyan.github.io/no-free-alpha/no-free-alpha.pdf">
+<meta name="citation_fulltext_html_url" content="https://ammarhsufyan.github.io/no-free-alpha/">
+<meta name="citation_keywords" content="AI trading">
+<meta name="citation_keywords" content="LLM trading agent">
+<meta name="citation_keywords" content="Claude trading bot">
+<meta name="citation_keywords" content="ChatGPT trading bot">
+<meta name="citation_keywords" content="crypto trading bot">
+<meta name="citation_keywords" content="algorithmic trading">
+<meta name="citation_keywords" content="backtesting">
+<meta name="citation_keywords" content="transaction costs">
+<meta name="citation_keywords" content="trading fees">
+<meta name="citation_keywords" content="copy trading">
+<meta name="citation_keywords" content="social trading">
+<meta name="citation_keywords" content="Hyperliquid">
+<meta name="citation_keywords" content="smart money">
+<meta name="citation_keywords" content="on-chain analytics">
+<meta name="citation_keywords" content="whale tracking">
+<meta name="citation_keywords" content="skill versus luck">
+<meta name="citation_keywords" content="false discovery rate">
+<meta name="citation_keywords" content="walk-forward analysis">
+<meta name="citation_keywords" content="Freqtrade">
+<meta name="citation_keywords" content="trend following">
+<meta name="citation_keywords" content="Bitcoin">
+<meta name="citation_keywords" content="cryptocurrency">
+<meta name="citation_keywords" content="quantitative finance">
+<meta name="citation_keywords" content="retail traders">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors", "name": "No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors", "author": {"@type": "Person", "name": "AmmarHSufyan", "url": "https://github.com/AmmarHSufyan"}, "datePublished": "2026-10-27", "inLanguage": "en", "isAccessibleForFree": true, "url": "https://ammarhsufyan.github.io/no-free-alpha/", "image": "https://ammarhsufyan.github.io/no-free-alpha/figures/fig2_copy_walkforward.png", "abstract": "Products sold to retail traders in 2026 promise that automated strategies, large language model (LLM) agents and copy trading of on-chain \"smart money\" can beat the market. We test these promises with simulated capital on historical data. Every trade is charged realistic exchange fees and slippage, and every result is compared with buy-and-hold. We study five families of strategy: 1. five classic indicator strategies on 1-hour candles of five large cryptocurrencies (October 2024 to October 2026); 2. eleven published community strategies for the Freqtrade framework; 3. a pilot LLM trading agent: Claude, behind a tool-less, schema-constrained interface, reading anonymised candles; 4. copy trading of Hyperliquid perpetual-futures wallets. Leaders are chosen by four \"finders\", one of them a principled skill finder that combines block-bootstrap tests, false-discovery-rate control and empirical-Bayes shrinkage. The copies are replayed walk-forward over 12 months with a 10-second delay, fees, slippage and funding, using the complete public fill ledger (457 days, 1,509,029 wallets); 5. a slow, volatility-scaled daily trend rotation over a point-in-time top-30 universe that includes delisted coins (2020 to 2026). After costs, no strategy beat holding Bitcoin over its full test window. - Costs: costs turned a +79% gross indicator strategy into −49%. - Copy trading: copying lost money with three of the four finders (−10.5% to −30.2%), against −19.1% for random wallets and −26.2% for Bitcoin. The exception (+10.9%) owed its gain to one cluster of related wallets, and its ranking failed on an independent pool. - Persistence: past copy profitability did not predict the next week (Spearman ρ = 0.04 over 33,927 wallet-weeks). Wallets that won more than 75% of their past weeks lost the most afterwards. - Trend rotation: the trend rotation cut the worst drawdown from −77% to −54%. But it compounded at 38.0% a year against 42.4% for Bitcoin, and in 2023 to 2026 it gave no drawdown protection at all. We conclude that what holds a retail participant back in 2026 is transaction costs and the difficulty of telling skill from luck, not a shortage of computing power or model intelligence.", "keywords": "AI trading, LLM trading agent, Claude trading bot, ChatGPT trading bot, crypto trading bot, algorithmic trading, backtesting, transaction costs, trading fees, copy trading, social trading, Hyperliquid, smart money, on-chain analytics, whale tracking, skill versus luck, false discovery rate, walk-forward analysis, Freqtrade, trend following, Bitcoin, cryptocurrency, quantitative finance, retail traders", "license": "https://opensource.org/licenses/MIT", "encoding": {"@type": "MediaObject", "contentUrl": "https://ammarhsufyan.github.io/no-free-alpha/no-free-alpha.pdf", "encodingFormat": "application/pdf"}, "isBasedOn": {"@type": "SoftwareSourceCode", "codeRepository": "https://github.com/AmmarHSufyan/no-free-alpha", "programmingLanguage": "Python"}, "about": ["Algorithmic trading", "Copy trading", "Large language models", "Cryptocurrency", "Backtesting"]}</script>
+<style>
+:root { --bg:#fcfcfb; --fg:#1b1b1a; --muted:#5d5c58; --rule:#e1e0d9; --accent:#2a78d6; --code:#f1f0ec; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#1a1a19; --fg:#ecebe7; --muted:#b5b4ad; --rule:#33332f; --accent:#6da7ec; --code:#262624; }
+  img { background:#fcfcfb; border-radius:4px; }
+}
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bg); color:var(--fg);
+  font:17px/1.65 Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif; }
+main { max-width:46rem; margin:0 auto; padding:2.5rem 1rem 4rem; }
+h1 { font-size:1.9rem; line-height:1.25; margin:0 0 .6rem; }
+h2 { font-size:1.35rem; margin:2.6rem 0 .8rem; padding-top:.6rem; border-top:1px solid var(--rule); }
+h3 { font-size:1.12rem; margin:2rem 0 .6rem; }
+h4 { font-size:1rem; margin:1.6rem 0 .5rem; }
+h1, h2, h3, h4, nav, table, figcaption, .meta { font-family:system-ui, -apple-system, "Segoe UI", sans-serif; }
+p, li { hyphens:auto; }
+a { color:var(--accent); }
+hr { border:0; border-top:1px solid var(--rule); margin:2rem 0; }
+img { max-width:100%; height:auto; display:block; margin:1.2rem auto; }
+.table-wrap { overflow-x:auto; margin:1rem 0; }
+table { border-collapse:collapse; font-size:.86rem; line-height:1.4; width:100%; }
+th, td { padding:.4rem .55rem; border-bottom:1px solid var(--rule); text-align:left; vertical-align:top; }
+th { font-weight:600; border-bottom:2px solid var(--rule); }
+code { font:.86em ui-monospace, SFMono-Regular, Consolas, monospace; background:var(--code); padding:.08em .3em; border-radius:3px; }
+pre { background:var(--code); padding:.8rem 1rem; overflow-x:auto; border-radius:4px; }
+pre code { padding:0; background:none; }
+.links { font-family:system-ui, -apple-system, "Segoe UI", sans-serif; font-size:.92rem; margin:1rem 0 0; }
+.links a { margin-right:1rem; }
+ol li { margin:.25rem 0; }
+@media print {
+  @page { size:A4; margin:16mm 15mm; }
+  :root { --bg:#fff; --fg:#000; --muted:#333; --rule:#ccc; --accent:#1c5cab; --code:#f3f3f3; }
+  body { font-size:10.5pt; }
+  main { max-width:none; padding:0; }
+  .links { display:none; }
+  h2 { break-before:auto; break-after:avoid; }
+  h3, h4 { break-after:avoid; }
+  img, table, pre { break-inside:avoid; }
+  a { color:inherit; text-decoration:none; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1 id="no-free-alpha-transaction-costs-luck-and-the-limits-of-algorithmic-llm-driven-and-copy-trading-for-retail-crypto-investors">No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors</h1><p class="links"><a href="no-free-alpha.pdf">PDF</a><a href="https://github.com/AmmarHSufyan/no-free-alpha">Code and data (GitHub)</a><a href="https://github.com/AmmarHSufyan/no-free-alpha/blob/main/paper/no-free-alpha.md">Markdown</a></p>
+<p><strong>Evidence from cost-aware backtests and a walk-forward replay of 1.5 million Hyperliquid wallets, 2019–2026</strong></p>
+<p>AmmarHSufyan · Independent research · October 2026</p>
+<p><em>Code, result files and the scripts that rebuild every figure: <a href="https://github.com/AmmarHSufyan/no-free-alpha">https://github.com/AmmarHSufyan/no-free-alpha</a> .
+This paper is not investment advice.</em></p>
+<h2 id="abstract">Abstract</h2>
+<p>Products sold to retail traders in 2026 promise that automated strategies, large language model (LLM) agents and
+copy trading of on-chain "smart money" can beat the market. We test these promises with simulated capital on
+historical data. Every trade is charged realistic exchange fees and slippage, and every result is compared with
+buy-and-hold. We study five families of strategy:</p>
+<ol>
+<li>five classic indicator strategies on 1-hour candles of five large cryptocurrencies (October 2024 to October 2026);</li>
+<li>eleven published community strategies for the Freqtrade framework;</li>
+<li>a pilot LLM trading agent: Claude, behind a tool-less, schema-constrained interface, reading anonymised candles;</li>
+<li>copy trading of Hyperliquid perpetual-futures wallets. Leaders are chosen by four "finders", one of them a
+   principled skill finder that combines block-bootstrap tests, false-discovery-rate control and empirical-Bayes
+   shrinkage. The copies are replayed walk-forward over 12 months with a 10-second delay, fees, slippage and
+   funding, using the complete public fill ledger (457 days, 1,509,029 wallets);</li>
+<li>a slow, volatility-scaled daily trend rotation over a point-in-time top-30 universe that includes delisted
+   coins (2020 to 2026).</li>
+</ol>
+<p>After costs, no strategy beat holding Bitcoin over its full test window.</p>
+<ul>
+<li><strong>Costs:</strong> costs turned a +79% gross indicator strategy into −49%.</li>
+<li><strong>Copy trading:</strong> copying lost money with three of the four finders (−10.5% to −30.2%), against −19.1% for
+  random wallets and −26.2% for Bitcoin. The exception (+10.9%) owed its gain to one cluster of related wallets,
+  and its ranking failed on an independent pool.</li>
+<li><strong>Persistence:</strong> past copy profitability did not predict the next week (Spearman ρ = 0.04 over 33,927
+  wallet-weeks). Wallets that won more than 75% of their past weeks lost the most afterwards.</li>
+<li><strong>Trend rotation:</strong> the trend rotation cut the worst drawdown from −77% to −54%. But it compounded at 38.0% a
+  year against 42.4% for Bitcoin, and in 2023 to 2026 it gave no drawdown protection at all.</li>
+</ul>
+<p>We conclude that what holds a retail participant back in 2026 is transaction costs and the difficulty of telling
+skill from luck, not a shortage of computing power or model intelligence.</p>
+<p><strong>Keywords:</strong> cryptocurrency, backtesting, transaction costs, copy trading, social trading, skill versus luck,
+false discovery rate, large language models, trend following, Hyperliquid.</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Three ideas dominate retail trading in 2026:</p>
+<ul>
+<li><strong>Automation:</strong> a bot that trades on technical signals around the clock.</li>
+<li><strong>AI:</strong> an LLM agent that reads the market and decides.</li>
+<li><strong>Copy trading:</strong> public ledgers such as Hyperliquid's show every wallet's trades, so one can find the skilled
+  traders and mirror them.</li>
+</ul>
+<p>Each idea is easy to build and easy to demonstrate with a flattering backtest. Few of them are tested the way a
+participant would actually live them: out of sample, after costs, against the simple alternative of buying and
+holding.</p>
+<p>This paper reports such a test. We built our own backtesting and copy-trading engine. Its rules are simple:</p>
+<ul>
+<li>signals are decided on closed candles and filled at the next open;</li>
+<li>every fill pays a taker fee and slippage;</li>
+<li>every strategy is compared with buy-and-hold.</li>
+</ul>
+<p>We ran it across the three ideas above, plus a fourth, slow strategy (daily trend following), which the literature
+suggests is among the few directional approaches that survive costs.</p>
+<p>Our contributions are:</p>
+<ol>
+<li><strong>An end-to-end, cost-aware evaluation of the strategies retail participants are offered.</strong> It covers
+   indicator bots, community bot strategies, an LLM agent, copy trading and trend following, all under one cost
+   model with one benchmark.</li>
+<li><strong>The first walk-forward copy-trading study we know of that uses the complete Hyperliquid fill ledger.</strong> It
+   covers 1.5 million wallets over 457 days. Copies are replayed with delay, fees, slippage, funding and
+   placebo selections. We also show that the public API omits TWAP fills that the ledger contains.</li>
+<li><strong>A skill finder built from the fund-performance literature, and evidence that it fails out of sample.</strong> It
+   combines bootstrap tests, false-discovery-rate control, shrinkage, market-beta removal and behavioural
+   filters.</li>
+<li><strong>Direct tests of the persistence rules practitioners use, all negative.</strong> We test "copy last week's winners",
+   "keep a leader while they make money, swap them on losses" and "follow wallets with recurring profits".</li>
+<li><strong>Open code and result files</strong>, so that every number below can be rebuilt.</li>
+</ol>
+<p>The answer is negative throughout, and the reasons are consistent. Costs consume the edge of any strategy that
+trades often. On-chain rankings mostly reflect luck and risk-taking. Where skill does exist, it is structural:
+patient liquidity provision and speed. That kind of skill does not survive being copied with a delay.</p>
+<h2 id="2-related-work">2. Related work</h2>
+<p><strong>Retail trading performance.</strong></p>
+<ul>
+<li>Among Taiwanese day traders, fewer than 1% earn reliable profits after fees [1].</li>
+<li>In Brazil, 97% of individuals who day-traded futures for more than 300 sessions lost money [2].</li>
+<li>Studies by India's market regulator find that roughly nine in ten individual equity-derivatives traders lose
+  money [3].</li>
+<li>On Hyperliquid itself, a study of every order from 729,540 wallets (March 2025 to June 2026) finds that manual
+  retail traders lost $1.11 billion, $725 million of it in fees. Market makers earned $208 million and automated
+  takers roughly broke even [4].</li>
+</ul>
+<p><strong>Skill versus luck.</strong> Fund-performance research offers a toolkit for separating skill from luck:</p>
+<ul>
+<li>bootstrap tests of the luckiest manager [7, 8];</li>
+<li>false-discovery-rate estimates of the share of truly skilled funds [6, 15];</li>
+<li>adjustments for multiple testing and backtest overfitting [9, 11, 12, 13];</li>
+<li>Bayesian shrinkage of noisy track records [8, 17].</li>
+</ul>
+<p>The consistent finding is that positive skill after costs is rare: about 0.6% of US equity mutual funds by one
+estimate [6]. Few funds cover their costs, although skill exists in both tails before fees [5]. Ranking on raw
+past performance reverses at the extreme [14]. Bailey et al. show that trying more than about 45 independent
+strategy variants on five years of daily data almost guarantees a backtest Sharpe ratio of 1 that is worthless
+out of sample [13].</p>
+<p><strong>Copy and social trading.</strong></p>
+<ul>
+<li>In a laboratory setting, the option to copy others itself induces excessive risk-taking [18].</li>
+<li>On a centralised exchange, the leaders the platform promoted most collapsed within about a week [19].</li>
+<li>A vendor study of 100,236 copier outcomes found 97% of leaders profitable on their own accounts but only 44%
+  of copiers profitable [20].</li>
+<li>On Polymarket, about 3% of accounts show statistically detectable skill, and 44% of those stay skilled [21].
+  Only a third of large monthly winners stay large winners the next month, and the share of volume placed as
+  passive (maker) orders is the strongest predictor of profit [22]. Bot-like accounts gained while human-paced
+  accounts lost [23].</li>
+</ul>
+<p><strong>LLM and AI trading agents.</strong></p>
+<ul>
+<li>In the first public "Alpha Arena" contest (October to November 2025), four of six frontier models lost real
+  money trading crypto perpetuals [24].</li>
+<li>Across eleven public AI-trading contests, the median model made money in only two [25].</li>
+<li>LLMs can recall historical prices, so even anonymised backtests of LLM strategies risk measuring memory rather
+  than skill [27].</li>
+<li>The best-documented LLM edge, scoring news headlines, decayed as it was adopted: the strategy's Sharpe ratio
+  fell from 6.54 to 1.22 [26]. Published anomalies in general lose about half their strength after publication
+  [32].</li>
+<li>Supervised machine learning on monthly US equity cross-sections does improve risk-adjusted returns [33], but
+  that setting differs from intraday crypto trading at retail fees.</li>
+</ul>
+<p><strong>Trend following.</strong></p>
+<ul>
+<li>Time-series momentum is well documented across asset classes [31].</li>
+<li>In crypto, simple daily moving-average rules on Bitcoin mainly reduce drawdowns, and can absorb roughly 1.1% to
+  4.5% of cost per trade before their edge disappears [28].</li>
+<li>Out-of-sample predictability from technical rules on Bitcoin itself is weak [29].</li>
+<li>A survivorship-free study of 21,616 crypto assets reports a long-only, volatility-scaled trend system that
+  survives costs [30].</li>
+</ul>
+<p>Our trend experiment is a simplified, independent replication in that spirit.</p>
+<h2 id="3-data">3. Data</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Content</th>
+<th>Period</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binance spot candles (exchange API)</td>
+<td>1-hour candles for BTC, ETH, SOL, BNB, XRP against USDT</td>
+<td>2024-06-01 to 2026-10-26</td>
+<td>Indicator strategies, LLM pilot</td>
+</tr>
+<tr>
+<td>Binance spot daily candles (API and data.binance.vision)</td>
+<td>30 large coins plus 8 delisted or collapsed coins (LUNA, FTT, MATIC, FTM, WAVES, SRM, OMG, XEM)</td>
+<td>2019-06-01 to 2026-10-26</td>
+<td>Trend rotation</td>
+</tr>
+<tr>
+<td>Binance USDT-M futures (data.binance.vision)</td>
+<td>1-minute candles for 212 coins; funding-rate history for 205 coins</td>
+<td>2025-07-25 to 2026-10-26</td>
+<td>Copy-trade execution prices and funding</td>
+</tr>
+<tr>
+<td>Hyperliquid public API</td>
+<td>Leaderboard; fills and weekly account values of 1,000 wallets sampled at random from a 38,549-wallet volume band ($1M–$300M all-time volume)</td>
+<td>2026-01-26 to 2026-10-26</td>
+<td>First copy-trading study</td>
+</tr>
+<tr>
+<td>Hyperliquid node fills (<code>s3://hl-mainnet-node-data/node_fills_by_block</code>, requester-pays)</td>
+<td>Every fill on the exchange, one record per block</td>
+<td>2025-07-27 to 2026-10-26 (457 days, 10,941 hourly files, 322 GB compressed)</td>
+<td>Full-ledger copy-trading study</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Processing the full ledger.</strong> We processed the node-fill files on temporary cloud servers in the bucket's
+region. The total cloud cost was about USD 1.20.</p>
+<ul>
+<li><strong>Pass 1</strong> reduces every (wallet, day) pair to totals: fills, distinct orders, closing orders, realised PnL net
+  of fees, fees, notional, maker fills, liquidations, spot activity and distinct coins. Notional and PnL are also
+  computed on coins that have a Binance price. The result is 19.3 million wallet-day rows for 1,509,029 wallets.</li>
+<li><strong>Pass 2</strong> extracts the complete fills of 4,458 wallets: every wallet picked by any finder in any month, plus
+  3,430 randomly drawn eligible wallets that serve as a placebo pool. Partial fills of the same order at the
+  same time are merged; PnL is unchanged.</li>
+</ul>
+<p><strong>Validation and a data finding.</strong> We compared the ledger with the API.</p>
+<ul>
+<li>For 8,296 wallet-days of the 1,000-wallet API pool, realised PnL net of fees matched to the cent on 95.7% of
+  days.</li>
+<li>Every mismatch traced to TWAP (time-weighted order) slice fills, which the ledger contains and the API's
+  <code>userFillsByTime</code> endpoint silently omits. On one wallet-day, the ledger shows 3,569 fills and a loss of about
+  $1.07 million. Excluding TWAP fills reproduces the API exactly: 81 fills, −$11.24.</li>
+</ul>
+<p>Studies built on the API alone therefore miss part of some wallets' trading.</p>
+<p><strong>Price scale.</strong> Hyperliquid and Binance prices for the same coin can differ by several percent on thinly traded
+markets. In our sample the gap was 3–16% on some newer tokens. All copy trades and all position marks therefore
+use a single price source, Binance futures (Section 4.4).</p>
+<h2 id="4-methodology">4. Methodology</h2>
+<h3 id="41-execution-and-cost-model">4.1 Execution and cost model</h3>
+<p>Two rules apply to every backtest:</p>
+<ul>
+<li>A signal computed on the close of candle <em>t</em> is filled at the open of candle <em>t+1</em>.</li>
+<li>Open positions are closed at the end of a test and pay exit costs.</li>
+</ul>
+<p>Stop orders fill at the stop price, or at the open if the price gapped through it. When a stop and a take-profit
+trigger in the same candle, the stop is assumed to fill first.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Venue / use</th>
+<th>Fee per fill</th>
+<th>Slippage per fill</th>
+<th>Round trip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binance spot, regular tier (indicator strategies, LLM, trend)</td>
+<td>0.10% taker</td>
+<td>0.05%</td>
+<td>≈ 0.30%</td>
+</tr>
+<tr>
+<td>Hyperliquid perps, base tier (copy trading)</td>
+<td>0.045% taker (0.015% maker in sensitivity tests)</td>
+<td>0.03%</td>
+<td>≈ 0.15%</td>
+</tr>
+<tr>
+<td>Freqtrade backtests</td>
+<td>0.10%</td>
+<td>none (fills at candle prices)</td>
+<td>0.20%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fee levels were checked against the exchanges' published schedules in October 2026 [35, 36]. For perpetual
+positions, funding is charged from Binance's funding-rate history, used as a stand-in for Hyperliquid's because
+Hyperliquid's funding endpoint is too rate-limited for hundreds of coins.</p>
+<h3 id="42-benchmarks-and-bias-controls">4.2 Benchmarks and bias controls</h3>
+<p><strong>Benchmark.</strong> Every result is compared with buy-and-hold of the same assets over the same window, charged one
+entry fee.</p>
+<p><strong>In-sample and out-of-sample split.</strong> Indicator strategies were tuned only on data before 2026-04-01 and judged
+on data after it.</p>
+<p><strong>Lookahead check.</strong> A detector recomputes each strategy's signals on truncated histories and flags any signal
+that changes when future candles are removed. All strategies passed. For the Freqtrade strategies, Freqtrade's
+own lookahead analysis found no bias in the three strategies it was run on.</p>
+<p><strong>Walk-forward evaluation.</strong> Every copy-trading finder sees only data before the start of each copy month. Every
+copy month is out of sample.</p>
+<p><strong>Survivorship.</strong> The trend study's universe is rebuilt each day from 30-day dollar volume, and it includes coins
+that later died or were delisted. LUNA is cut at 2022-05-13, because Binance later reused the ticker for a new
+coin.</p>
+<p><strong>Multiple testing.</strong> We report how many variants were tried and treat isolated best results with suspicion. The
+negative conclusions are, if anything, strengthened by multiple testing: we searched widely and still found no
+robust edge.</p>
+<p><strong>Software correctness.</strong> The engine has 24 unit tests. They include a test that a price gap between two
+exchanges cannot create profit, and a test that a simulated limit order fills only when the market trades
+through its price.</p>
+<h3 id="43-strategies-on-candles">4.3 Strategies on candles</h3>
+<p><strong>Indicator strategies.</strong> These run on 1-hour candles of five pairs, from 2024-10-01 to 2026-10-26:</p>
+<ul>
+<li>EMA crossover;</li>
+<li>RSI mean reversion;</li>
+<li>Bollinger-band mean reversion;</li>
+<li>Donchian breakout;</li>
+<li>MACD trend.</li>
+</ul>
+<p>Each is long-only with fixed default parameters; the in-sample grid search did not change the conclusions.</p>
+<p><strong>Freqtrade community strategies.</strong> We ran eleven strategies from the public <code>freqtrade-strategies</code> repository
+(commit <code>f3340ce</code>) [34] at their published default parameters. The pairs and period are the same as above, on
+5-minute or 1-hour candles. No hyperparameter optimisation was done.</p>
+<p><strong>LLM agent.</strong> For each 4-hour decision, the model receives a text description of the last 48 candles, plus
+recent changes, moving-average distances and the monthly range. Prices are rebased so that the latest close is
+100. The asset's name and the dates are hidden, so that the model cannot use what it remembers about a known
+period [27].</p>
+<p>The model must answer through a JSON schema: a stance ("long" or "flat"), a confidence and a one-sentence reason.
+It has no tools and no order access, and the system prompt states the round-trip cost. We used Claude (Haiku
+tier) through the Claude Code command-line interface.</p>
+<h3 id="44-the-copy-trading-simulator">4.4 The copy-trading simulator</h3>
+<p>For each leader fill at time <em>t</em>, the copier acts at the first 1-minute open after <em>t</em> + 10 seconds. All prices
+come from Binance futures:</p>
+<ul>
+<li>the trade's price;</li>
+<li>slippage of 3 bps;</li>
+<li>the taker fee.</li>
+</ul>
+<p><strong>Sizing.</strong> Our target position is the leader's position scaled by our allocation divided by the leader's
+"exposure". On the API pool, exposure is the leader's weekly account value. On the full ledger, which has no
+account values, it is the 90th percentile of the leader's gross position value over the previous 90 days.
+Positions are capped at 3× our allocation. Equity at or below zero counts as liquidation.</p>
+<p><strong>Variants.</strong></p>
+<ul>
+<li><strong>Leader raw:</strong> the leader's own trades at their own prices, with no delay and no costs.</li>
+<li><strong>Copy:</strong> 10-second delay with all costs.</li>
+<li><strong>Copy with a 25% stop:</strong> copying of a leader stops once our copy of them is 25% below its peak.</li>
+<li><strong>Waiting orders:</strong> limit orders at the current price, filled only if a later minute trades strictly through
+  the price within <em>N</em> minutes. Otherwise the copier either chases at the taker price or skips the trade.</li>
+</ul>
+<p><strong>A disclosed bug.</strong> An early version of the copier priced trades at the leader's Hyperliquid fill price, moved
+by the Binance price change since the minute's open, but marked positions at Binance prices. On coins where the
+two venues diverged, this created fictitious profit for dip-buying wallets, up to 176 percentage points for a
+single leader. It was found because copies outperformed their own leaders. The bug was fixed by using a single
+price source, and a regression test was added. All copy results in this paper come from the fixed simulator.</p>
+<h3 id="45-finders">4.5 Finders</h3>
+<p>Each month <em>T</em>, a finder ranks wallets using only data from before <em>T</em>. The 50 top-ranked leaders are copied
+with equal capital for the next 30 days.</p>
+<p><strong>Eligibility.</strong> A wallet must meet all of the following in the 90-day lookback:</p>
+<ul>
+<li>at most 30 orders a day;</li>
+<li>at least 20 active days and at least 20 closing orders;</li>
+<li>no liquidation;</li>
+<li>spot activity no more than 10% of fills;</li>
+<li>at least $100,000 traded;</li>
+<li>at least 70% of notional in coins with a Binance price.</li>
+</ul>
+<p>About 9,000 wallets a month were eligible.</p>
+<p><strong>The finders:</strong></p>
+<ul>
+<li><strong>Hot:</strong> the largest realised PnL in dollars over the last 7 days. This is the leaderboard approach.</li>
+<li><strong>Steady:</strong> at least 2 of the last 3 months profitable, ranked by the t-statistic of daily PnL (idle days
+  counted as zero).</li>
+<li><strong>Edge:</strong> the highest gross edge per dollar traded, shrunk towards the cross-sectional mean by an
+  empirical-Bayes factor that grows with the wallet's sample size [17].</li>
+<li><strong>Skill:</strong>
+  1. compute a one-sided p-value from each wallet's t-statistic;
+  2. apply Benjamini–Hochberg false-discovery-rate control at <em>q</em> = 0.10 across all eligible wallets [15];
+  3. keep the discoveries whose shrunk edge exceeds our 7.5 bps copy cost.</li>
+</ul>
+<p>On the API pool, the skill finder is stricter. It applies behavioural filters: a cap on how much of a wallet's
+  winnings may come from its top three trades, and a ban on averaging down into losing positions. It then
+  replays our own copy of each wallet over its history, regresses daily copy returns on Bitcoin's return to
+  separate alpha from beta, and tests the alpha with a block bootstrap (5,000 resamples, 5-day blocks) [16]
+  before applying FDR control and shrinkage.
+- <strong>Random (placebo):</strong> each month, 100 sets of 50 wallets are drawn at random from the eligible placebo pool. A
+  finder that has found skill should beat most random sets.</p>
+<h3 id="46-daily-trend-rotation">4.6 Daily trend rotation</h3>
+<p><strong>Trend score.</strong> For each coin and day, the score is the share of four moving averages (20, 50, 100 and 200
+days) that the close is above, a number from 0 to 1. Coins with less than 200 days of history score 0.</p>
+<p><strong>Weight.</strong> Each coin's weight is</p>
+<p>score × min(1, target volatility / realised volatility) / <em>N</em>,</p>
+<p>where:</p>
+<ul>
+<li>target volatility is 100% a year;</li>
+<li>realised volatility is measured over the previous 30 days, annualised;</li>
+<li><em>N</em> is the number of tradable coins in the universe that day.</li>
+</ul>
+<p>The weights sum to at most 100%, so there is no leverage.</p>
+<p><strong>Trading.</strong> Weights decided at the daily close are traded at the next day's open, at Binance spot costs. A
+position is traded only when it differs from its target by more than 25% of the position's size, or when it must
+open from zero or close to zero.</p>
+<p><strong>Universe and variants.</strong> The universe is the top 10, 20 or 30 coins by 30-day average dollar volume, rebuilt
+daily. A weekly variant rebalances on Mondays and measures volatility over 90 days.</p>
+<h2 id="5-results">5. Results</h2>
+<h3 id="51-indicator-strategies-costs-decide">5.1 Indicator strategies: costs decide</h3>
+<p><img alt="Figure 1" src="figures/fig1_costs.png" loading="lazy"></p>
+<p><em>Table 1. Indicator strategies, 5 pairs, 1-hour candles, USD 10,000, Binance spot costs. Source:
+<code>results/engine/</code>.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Full period gross</th>
+<th>Full period net</th>
+<th>Trades</th>
+<th>Out-of-sample net (Apr–Oct 2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buy and hold</td>
+<td>+23.4%</td>
+<td><strong>+23.0%</strong></td>
+<td>5</td>
+<td><strong>+12.2%</strong></td>
+</tr>
+<tr>
+<td>Donchian breakout</td>
+<td>+78.3%</td>
+<td>+27.9%</td>
+<td>599</td>
+<td>−9.6%</td>
+</tr>
+<tr>
+<td>MACD trend</td>
+<td>+79.3%</td>
+<td>−49.2%</td>
+<td>2,168</td>
+<td>−12.0%</td>
+</tr>
+<tr>
+<td>EMA crossover</td>
+<td>+32.0%</td>
+<td>−8.7%</td>
+<td>641</td>
+<td>−6.4%</td>
+</tr>
+<tr>
+<td>RSI mean reversion</td>
+<td>+2.4%</td>
+<td>−1.8%</td>
+<td>72</td>
+<td>+5.9%</td>
+</tr>
+<tr>
+<td>Bollinger mean reversion</td>
+<td>−8.1%</td>
+<td>−69.3%</td>
+<td>1,815</td>
+<td>−22.2%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Gross returns are respectable, and two strategies more than tripled buy-and-hold before costs. Net returns are
+not. MACD's 2,168 fills at about 0.15% each cost more than its entire gross gain. Only Donchian finished the full
+period ahead of buy-and-hold, and all of its lead came from the in-sample period. Out of sample it lost 9.6%
+while buy-and-hold made 12.2%. <strong>No indicator strategy beat buy-and-hold out of sample.</strong></p>
+<h3 id="52-community-strategies">5.2 Community strategies</h3>
+<p><em>Table 2. Eleven Freqtrade community strategies at default parameters, 0.1% fee per side. "B&amp;H" is Freqtrade's
+market change for the same five pairs. Source: <code>freqtrade/RESULTS.md</code>, <code>results/freqtrade/</code>.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Full period (Oct 2024 – Oct 2026)</th>
+<th>Max DD</th>
+<th>Last 6 months</th>
+<th>Lookahead bias</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CombinedBinHAndCluc</td>
+<td>+20.4%</td>
+<td>9.3%</td>
+<td>+2.8%</td>
+<td>none found</td>
+</tr>
+<tr>
+<td>ClucMay72018</td>
+<td>+1.5%</td>
+<td>7.2%</td>
+<td>+2.0%</td>
+<td>none found</td>
+</tr>
+<tr>
+<td>Strategy003</td>
+<td>−14.2%</td>
+<td>27.0%</td>
+<td>+1.5%</td>
+<td>–</td>
+</tr>
+<tr>
+<td>BbandRsi</td>
+<td>−16.2%</td>
+<td>44.2%</td>
+<td><strong>+8.8%</strong></td>
+<td>none found</td>
+</tr>
+<tr>
+<td>Strategy002</td>
+<td>−21.9%</td>
+<td>25.9%</td>
+<td>−1.3%</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Strategy004</td>
+<td>−33.8%</td>
+<td>41.6%</td>
+<td>−6.3%</td>
+<td>–</td>
+</tr>
+<tr>
+<td>ADXMomentum</td>
+<td>−37.0%</td>
+<td>54.8%</td>
+<td>−20.4%</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Supertrend</td>
+<td>−39.7%</td>
+<td>62.8%</td>
+<td>−14.1%</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Strategy005</td>
+<td>−65.9%</td>
+<td>70.4%</td>
+<td>−11.0%</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Strategy001</td>
+<td>−70.2%</td>
+<td>79.6%</td>
+<td>−14.0%</td>
+<td>–</td>
+</tr>
+<tr>
+<td>SampleStrategy</td>
+<td>−71.2%</td>
+<td>76.8%</td>
+<td>−16.1%</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Buy and hold (B&amp;H)</strong></td>
+<td><strong>+23.8%</strong></td>
+<td>–</td>
+<td><strong>+5.2% / +5.7%</strong></td>
+<td>–</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nine of eleven strategies lost money over the full period, and none beat buy-and-hold. Over the last six months,
+one strategy (BbandRsi) did beat it, but the same strategy lost 16.2% over the full period with a 44% drawdown.
+That pattern points to regime dependence, not skill.</p>
+<p>High win rates were common (81–95% for Strategy001–005), and so were profit factors below 1. These strategies
+take many small profits and a few large losses.</p>
+<h3 id="53-llm-agent-pilot">5.3 LLM agent (pilot)</h3>
+<p>Over one week of 4-hour Bitcoin candles (2026-10-19 to 2026-10-26), the model made 42 decisions:</p>
+<ul>
+<li>41 were "flat" and 1 was "long";</li>
+<li>the agent made one trade and returned −0.31%, while Bitcoin fell 3.17%;</li>
+<li>the API-equivalent cost of the decisions was about USD 0.58.</li>
+</ul>
+<p>Sources: <code>results/ai/</code>.</p>
+<p>The agent "won" by abstaining in a falling week. A single week cannot tell whether it has any skill, and we do
+not claim that it does. The pilot does show two things:</p>
+<ul>
+<li><strong>Cost awareness makes the model abstain.</strong> Told that a round trip costs 0.3%, it almost never trades on chart
+  data alone.</li>
+<li><strong>Testing an LLM honestly is expensive.</strong> A statistically meaningful test needs thousands of decisions, and the
+  model must not be able to recognise the period it is tested on.</li>
+</ul>
+<p>The external evidence fills the gap. The first public "Alpha Arena" contest saw four of six frontier models lose
+real money, and Claude Sonnet 4.5 lost 31–42% [24]. Across eleven public contests, the median model made money in
+only two [25]. <strong>We find no evidence, ours or published, that an LLM reading prices beats buy-and-hold after
+costs.</strong></p>
+<h3 id="54-copy-trading">5.4 Copy trading</h3>
+<h4 id="541-leaderboard-winners-do-not-stay-winners">5.4.1 Leaderboard winners do not stay winners</h4>
+<p>In the 1,000-wallet API pool, we looked at 59 "hot" picks, the best 7-day performers. They averaged +19% in the
+week before being picked and −12% in the month after, and only 37% stayed profitable. Picking by past results
+did no better than picking at random, even before costs.</p>
+<p>The principled skill finder rarely found anyone to copy (Figure 6). In one representative month, 1,000 wallets
+narrowed to 16 after the behavioural filters, and none passed the luck test. The two wallets that passed in
+another month lost 16%.</p>
+<p><img alt="Figure 6" src="figures/fig6_skill_funnel.png" loading="lazy"></p>
+<h4 id="542-the-full-ledger-a-screen-that-looks-promising">5.4.2 The full ledger: a screen that looks promising</h4>
+<p>On the full ledger, a fast screen measured each finder's edge per dollar traded over the next 30 days. It ignores
+delay and sizing, so it is optimistic. The screen covered 12 test months with about 9,000 eligible wallets a
+month and 1,000 placebo sets a month.</p>
+<ul>
+<li>Random sets lost money after costs in 11 of 12 months.</li>
+<li>The "edge" finder was positive in 10 of 12 months and beat at least 90% of random sets in 9.</li>
+</ul>
+<p>Taken alone, that would be a publishable result. It did not survive a realistic replay.</p>
+<h4 id="543-the-full-ledger-walk-forward-replay">5.4.3 The full ledger: walk-forward replay</h4>
+<p><em>Table 3. Copying 50 leaders per finder, re-picked monthly, 12 months (2025-10-25 to 2026-10-20), USD 10,000,
+10-second delay, all costs. Source: <code>results/copylab/walkforward_12m_summary.csv</code>.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Finder</th>
+<th>Leaders' own result</th>
+<th>Our copy</th>
+<th>Copy with 25% stop</th>
+<th>Months up</th>
+<th>Random sets beaten</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hot (best last 7 days)</td>
+<td>−0.4%</td>
+<td>−23.1%</td>
+<td>−16.3%</td>
+<td>3 / 12</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>Edge (best shrunk edge)</td>
+<td>−7.1%</td>
+<td>−10.5%</td>
+<td>−4.8%</td>
+<td>4 / 12</td>
+<td>95%</td>
+</tr>
+<tr>
+<td>Skill (FDR + shrinkage)</td>
+<td>−26.6%</td>
+<td>−30.2%</td>
+<td>−23.0%</td>
+<td>0 / 12</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Steady (t-stat, 2 of 3 months up)</td>
+<td><strong>+75.0%</strong></td>
+<td><strong>+10.9%</strong></td>
+<td>−4.7%</td>
+<td>7 / 12</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Random sets (median of 100)</td>
+<td>–</td>
+<td>−19.1%</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Hold Bitcoin</td>
+<td>–</td>
+<td>−26.2%</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+</tbody>
+</table></div>
+<p><img alt="Figure 2" src="figures/fig2_copy_walkforward.png" loading="lazy"></p>
+<p>The replay reverses the screen. The "edge" finder's leaders lost money themselves (−7.1%). Its apparent edge in
+the screen was an artefact of realised-PnL timing: positions opened before <em>T</em> and closed after it credit gains
+that a copier who starts at <em>T</em> never receives.</p>
+<p>Three of four finders lost money. One finder, steady, made money: its leaders gained 75% in a year in which
+Bitcoin fell 26%. That is not luck in any simple sense; it beat all 100 random sets. The next two subsections ask
+whether it was skill that can be copied.</p>
+<h4 id="544-where-the-steady-leaders-edge-goes">5.4.4 Where the steady leaders' edge goes</h4>
+<p><img alt="Figure 3" src="figures/fig3_cost_ladder.png" loading="lazy"></p>
+<p>Figure 3 decomposes the gap between the steady leaders' +75.0% and our +10.9%:</p>
+<ul>
+<li>the 10-second delay alone costs about 8 points (+67.3% with no costs);</li>
+<li>a maker fee, assuming every order fills, leaves +54.2%;</li>
+<li>taker fees and slippage take the result to +10.9%.</li>
+</ul>
+<p>The obvious fix is to post patient limit orders and earn the maker rebate tier, but it fails. When orders fill
+only if the market trades through them, the copy loses 27.4% (chasing after 5 minutes), 26.8% (skipping unfilled
+orders) or 31.9% (waiting 15 minutes). This is adverse selection: a resting order fills when the leader turns out
+to be wrong, and is left behind when the leader is right.</p>
+<h4 id="545-the-one-success-does-not-generalise">5.4.5 The one success does not generalise</h4>
+<p>Two checks show that steady's result is not a transferable signal:</p>
+<ol>
+<li><strong>Concentration.</strong> Steady's monthly result decomposes exactly into leader-months. Of 600 leader-months, 252
+   were wallets trading mainly the HYPE token, and they contributed +39.8 percentage points. All other leaders
+   together contributed about −26 points. The median leader-month returned 0.0%, and 49% were positive. The same
+   HYPE wallets were picked in up to 11 of 12 months; their near-identical behaviour suggests a single operator
+   behind linked wallets.</li>
+<li><strong>Generalisation.</strong> We applied the same steady ranking inside the independent placebo pool of about 1,000
+   wallets a month. The top 10 returned −37.2% over 12 months, against a median of −17.6% for the rest of the
+   pool, and beat the rest in only 6 of 12 months.</li>
+</ol>
+<p>The ranking found one profitable cluster. It is not a method that finds skill.</p>
+<h4 id="546-no-hot-streak-not-even-for-one-week">5.4.6 No hot streak, not even for one week</h4>
+<p>A popular belief is that a good trader stays good for a short time, so one should copy last week's winners for one
+week and then swap. We tested it in 49 weekly selections: the top 10 wallets by last-7-day realised PnL were
+copied for four weeks with all costs, against 20 random sets a week.</p>
+<p><img alt="Figure 5" src="figures/fig5_hot_streak.png" loading="lazy"></p>
+<ul>
+<li>Last week's winners beat the random median in 51% of first weeks, a coin flip.</li>
+<li>They did worse than random in weeks 2 to 4.</li>
+<li>A weekly-swap strategy returned −17.3% over 49 weeks, against −18.5% for random selections.</li>
+</ul>
+<h4 id="547-adaptive-rules-and-the-persistence-of-copy-returns">5.4.7 Adaptive rules and the persistence of copy returns</h4>
+<p>To test adaptive rules cheaply, we built a table of <em>our own</em> one-week copy return for each of 3,283 wallets over
+52 weeks (51,201 replays). We then tested every variant of three rules practitioners propose:</p>
+<ul>
+<li>"keep a leader while they make money, swap them after losses";</li>
+<li>"swap them after a −5% drawdown from when we started following";</li>
+<li>"follow wallets with recurring profits", meaning profitable in at least 5 or 6 of the last 8 weeks, or over 12
+  weeks.</li>
+</ul>
+<p><em>Table 4. Selected adaptive copy rules over 52 weeks (10 leaders, all costs). Source:
+<code>results/copylab/rotation_rules.csv</code>.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>52-week return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recurring winners (≥ 5 of 8 weeks), drop at −5%</td>
+<td>−9.5%</td>
+</tr>
+<tr>
+<td>Recurring winners (12 weeks), drop at −5%</td>
+<td>−11.7%</td>
+</tr>
+<tr>
+<td>Same keep/drop rule, random replacements</td>
+<td>−13.5%</td>
+</tr>
+<tr>
+<td>Recurring winners (≥ 6 of 8 weeks), drop after 1 losing week</td>
+<td>−21.5%</td>
+</tr>
+<tr>
+<td>Random 10 leaders each week (median)</td>
+<td>−22.7%</td>
+</tr>
+<tr>
+<td>Top 10 by last week's profit, swapped weekly</td>
+<td>−25.3%</td>
+</tr>
+<tr>
+<td>Hold Bitcoin</td>
+<td>−26.9%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every rule lost money. The −5% exit helps a little, but selecting leaders adds almost nothing over random
+replacements. Figure 4 shows why.</p>
+<p><img alt="Figure 4" src="figures/fig4_persistence.png" loading="lazy"></p>
+<p>Across 33,927 wallet-weeks, the rank correlation between a wallet's average copy return over the past 8 weeks
+and its copy return the next week is 0.04. The correlation between its share of winning past weeks and its next
+week is −0.01.</p>
+<ul>
+<li>The best past decile, at +3.2% a week, returns −0.61% the next week, worse than the middle deciles.</li>
+<li>Wallets that won more than 75% of their past weeks win 48% of the time the next week, yet average −0.98%, the
+  worst of any group.</li>
+</ul>
+<p>This is the signature of strategies that collect small, frequent gains and occasionally take a large loss, often
+described as "picking up pennies in front of a steamroller". A high past win rate is a warning sign, not a
+recommendation. <strong>Copyable returns in this data show no persistence that any rule built on past results could
+exploit.</strong></p>
+<h3 id="55-daily-trend-rotation">5.5 Daily trend rotation</h3>
+<p><em>Table 5. Daily trend rotation, point-in-time universe including dead coins, target volatility 100%, 25% band.
+Source: <code>results/trend/trend_variants.csv</code>.</em></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Period</th>
+<th>Strategy</th>
+<th>CAGR</th>
+<th>Max drawdown</th>
+<th>Sharpe</th>
+<th>Trades per coin per year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2020–2026</td>
+<td>Trend, top 30, daily</td>
+<td>38.0%</td>
+<td>−53.9%</td>
+<td>1.05</td>
+<td>80</td>
+</tr>
+<tr>
+<td>2020–2026</td>
+<td>Trend, top 20, daily</td>
+<td>36.0%</td>
+<td>−50.8%</td>
+<td>1.00</td>
+<td>81</td>
+</tr>
+<tr>
+<td>2020–2026</td>
+<td>Trend, top 10, daily</td>
+<td>32.5%</td>
+<td>−56.1%</td>
+<td>0.91</td>
+<td>84</td>
+</tr>
+<tr>
+<td>2020–2026</td>
+<td>Trend, top 30, weekly</td>
+<td>32.3%</td>
+<td>−52.5%</td>
+<td>0.91</td>
+<td>36</td>
+</tr>
+<tr>
+<td>2020–2026</td>
+<td>Hold Bitcoin</td>
+<td><strong>42.4%</strong></td>
+<td>−76.6%</td>
+<td>0.89</td>
+<td>–</td>
+</tr>
+<tr>
+<td>2020–2026</td>
+<td>Hold the top 30 of January 2020</td>
+<td>43.4%</td>
+<td>−84.9%</td>
+<td>0.86</td>
+<td>–</td>
+</tr>
+<tr>
+<td>2020–2022</td>
+<td>Trend, top 30, daily</td>
+<td><strong>81.4%</strong></td>
+<td>−40.2%</td>
+<td><strong>1.62</strong></td>
+<td>72</td>
+</tr>
+<tr>
+<td>2020–2022</td>
+<td>Hold Bitcoin</td>
+<td>31.9%</td>
+<td>−76.6%</td>
+<td>0.76</td>
+<td>–</td>
+</tr>
+<tr>
+<td>2023–2026</td>
+<td>Trend, top 30, daily</td>
+<td>11.4%</td>
+<td>−53.9%</td>
+<td>0.49</td>
+<td>87</td>
+</tr>
+<tr>
+<td>2023–2026</td>
+<td>Trend, top 10, daily</td>
+<td>18.3%</td>
+<td>−41.6%</td>
+<td>0.66</td>
+<td>85</td>
+</tr>
+<tr>
+<td>2023–2026</td>
+<td>Hold Bitcoin</td>
+<td><strong>51.2%</strong></td>
+<td>−53.0%</td>
+<td><strong>1.12</strong></td>
+<td>–</td>
+</tr>
+</tbody>
+</table></div>
+<p><img alt="Figure 7" src="figures/fig7_trend.png" loading="lazy"></p>
+<p>The trend rotation is the only strategy that delivered something of value: a better Sharpe ratio than holding
+over the full period (1.05 against 0.89) and a much smaller worst loss (−54% against −77% for Bitcoin and −85%
+for the January-2020 top 30). On average it held about 41% of its capital in coins.</p>
+<p>It did not beat Bitcoin's compound return over 2020–2026, and its record depends heavily on the period. It
+excelled in the 2020–2022 boom and bust, then badly lagged a Bitcoin-led market in 2023–2026. In that later
+period its worst drawdown (−53.9%) was no better than Bitcoin's own (−53.0%), so it gave no crash protection at
+all.</p>
+<p>Weekly rebalancing halved trading but lowered returns in every configuration: reacting late cost more than the
+fees it saved. A smaller universe helped in 2023–2026 but hurt over the full period. Choosing it in hindsight
+would be overfitting.</p>
+<h2 id="6-discussion">6. Discussion</h2>
+<p><strong>Why costs dominate.</strong> At a 0.30% round trip, a strategy that makes 300 round trips a year must find 90% a year
+of gross edge just to break even. Directional edges in liquid crypto, where they exist at all, are measured in
+basis points per trade [4, 28]. Only strategies that trade rarely, holding positions for weeks, can survive this
+arithmetic. The trend rotation is one, and even it pays a meaningful drag.</p>
+<p><strong>Why copy trading fails.</strong> Before costs, perpetual futures are close to zero-sum, and fees push the total below
+zero [4]. Rankings built on recent profit therefore mostly sort wallets by luck and by risk appetite.</p>
+<p>The skill that does persist on venues like Hyperliquid and Polymarket is structural [4, 22]:</p>
+<ul>
+<li><strong>patience:</strong> providing liquidity with resting orders;</li>
+<li><strong>speed:</strong> acting within seconds.</li>
+</ul>
+<p>Neither survives a copier that is seconds late and pays the spread, and Figure 3 measures that loss directly.</p>
+<p>Our principled skill finder failed for an instructive reason. The statistics worked as designed: they declined to
+certify almost anyone, because a few months of noisy, fat-tailed trading cannot separate a skilled wallet from a
+lucky one at any reasonable error rate [11, 13]. The few wallets that did pass were not skilled out of sample.</p>
+<p><strong>Why more intelligence does not help.</strong> None of these failures comes from a lack of computing power or
+prediction quality. A more capable model reading the same prices faces the same arithmetic:</p>
+<ul>
+<li>the same costs;</li>
+<li>the same zero-sum structure;</li>
+<li>the same inability to tell luck from skill in short samples.</li>
+</ul>
+<p>Its backtests are also less trustworthy, because it may remember the history it is tested on [27]. Where language
+models have shown an edge, it came from new information such as news text, not from price patterns, and the edge
+decayed as it was adopted [26]. In our pilot, the cost-aware model's dominant decision was not to trade, which
+was arguably the correct one.</p>
+<p><strong>What a retail participant can take from this.</strong></p>
+<ol>
+<li>Holding a broad, liquid asset was the hardest benchmark to beat.</li>
+<li>Any strategy should be judged net of costs, out of sample, and against that benchmark.</li>
+<li>A high win rate or a short streak of profits says almost nothing.</li>
+<li>If a systematic overlay is used, its credible role is risk reduction, not outperformance.</li>
+</ol>
+<h2 id="7-limitations-and-threats-to-validity">7. Limitations and threats to validity</h2>
+<ul>
+<li><strong>One market regime for copy trading.</strong> The 12-month copy window (October 2025 to October 2026) was a falling
+  market for Bitcoin (−26%). Long-biased leaders were penalised. However, the finders were compared with random
+  wallets from the same market, and that relative comparison is unaffected.</li>
+<li><strong>Price and funding proxies.</strong> Copy trades use Binance futures prices and funding instead of Hyperliquid's. The
+  difference in level is removed by using a single price source for both trades and marks, but basis effects
+  remain. Only 212 of 234 Hyperliquid perpetuals have a Binance counterpart, so trading in other markets
+  (including builder-deployed markets) is excluded.</li>
+<li><strong>Execution granularity.</strong> Fills occur at 1-minute opens. Real fills could be better or worse, and
+  minute-level data understates limit-order fill rates. That is why we report the waiting-order results as a
+  direction, not a precise number. Market impact beyond fixed slippage is not modelled, which favours the
+  strategies.</li>
+<li><strong>Sizing on the full ledger.</strong> The ledger has no account values, so leader exposure is approximated by the
+  90th percentile of gross position value. Different sizing would change magnitudes, but not the sign of the
+  persistence results, which use returns per dollar.</li>
+<li><strong>The LLM evidence is a pilot.</strong> Our own LLM test is one week and 42 decisions. It shows the method and the
+  model's behaviour, not its long-run profitability. The conclusion about LLM agents rests mainly on published
+  contest results [24, 25].</li>
+<li><strong>Breadth of the search.</strong> We tried many variants, and some reported best cases are selected. This weakens the
+  positive results, such as the steady finder and the trend configuration. It strengthens the negative ones,
+  because a wide search still found no robust edge.</li>
+<li><strong>What was not tested:</strong></li>
+<li>market making and other liquidity-providing strategies;</li>
+<li>cross-exchange arbitrage;</li>
+<li>funding-rate carry;</li>
+<li>news-driven LLM strategies;</li>
+<li>supervised machine learning on cross-sections;</li>
+<li>longer-horizon live paper trading.</li>
+</ul>
+<p>These are the most plausible remaining sources of a retail edge, and the literature suggests their returns in
+  2026 are thin.
+- <strong>Taxes and on-ramp costs</strong> are excluded. Including them would make every active strategy look worse.</p>
+<h2 id="8-conclusion">8. Conclusion</h2>
+<p>We tested the strategies most often offered to retail crypto traders in 2026 under one honest standard: out of
+sample, after realistic costs, against buy-and-hold. No strategy beat holding Bitcoin over its full test window.</p>
+<ul>
+<li>Indicator bots and community strategies lost their gross edge to fees.</li>
+<li>An LLM agent chose mostly not to trade.</li>
+<li>Copying on-chain traders lost money with every finder but one, and that one's gain came from a single cluster
+  that a fresh pool did not reproduce.</li>
+<li>Simple rules about recent winners, streaks and recurring profits had no predictive power: the correlation
+  between past and next-week copy returns was 0.04.</li>
+<li>The best result was a slow trend rotation, whose value lies in smaller crashes, not higher returns.</li>
+</ul>
+<p>None of these failures would be fixed by more computing power or a smarter model. The constraints are costs and
+the statistical indistinguishability of skill from luck in short, noisy track records. For a retail participant,
+there is no free alpha.</p>
+<h2 id="reproducibility">Reproducibility</h2>
+<p>Everything needed to rebuild the paper is in this repository:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bot/</code></td>
+<td>Backtest engine, cost model, strategies, LLM wrapper, paper trader, trend rotation</td>
+</tr>
+<tr>
+<td><code>bot/copylab/</code></td>
+<td>Hyperliquid API client, finders, copier, statistics, walk-forward and full-ledger pipelines</td>
+</tr>
+<tr>
+<td><code>bot/copylab/bulk/</code></td>
+<td>Server job that reduces the 322 GB node-fill ledger to wallet-day totals and selected wallets' fills</td>
+</tr>
+<tr>
+<td><code>tests/</code></td>
+<td>24 unit tests (<code>python -m pytest</code>)</td>
+</tr>
+<tr>
+<td><code>results/</code></td>
+<td>Every result table behind the figures. Wallet addresses are replaced by neutral IDs</td>
+</tr>
+<tr>
+<td><code>paper/make_figures.py</code></td>
+<td>Rebuilds every figure and derived table from <code>results/</code> and the daily candles</td>
+</tr>
+<tr>
+<td><code>freqtrade/</code></td>
+<td>Configuration and scripts for the Freqtrade benchmark</td>
+</tr>
+</tbody>
+</table></div>
+<p>The candle data are public and are downloaded by the code (<code>python -m bot download</code>, <code>python -m bot.trend</code>).
+The Hyperliquid ledger is public in a requester-pays bucket. Processing it cost about USD 1.20 on temporary cloud
+servers, and the runbook is in the module docstrings of <code>bot/copylab/bulk/</code>.</p>
+<h2 id="statement-on-ai-assistance">Statement on AI assistance</h2>
+<p>This study was carried out with the help of an AI coding assistant (Claude, by Anthropic), which wrote most of
+the code, ran the experiments and drafted the text under the author's direction. The LLM agent evaluated in
+Section 5.3 is a separate use of a Claude model as a trading decision module.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Barber, B. M., Lee, Y.-T., Liu, Y.-J., &amp; Odean, T. (2014). The cross-section of speculator skill: Evidence from day trading. <em>Journal of Financial Markets</em>, 18, 1–24. <a href="https://ideas.repec.org/a/eee/finmar/v18y2014icp1-24.html">https://ideas.repec.org/a/eee/finmar/v18y2014icp1-24.html</a></li>
+<li>Chague, F., De-Losso, R., &amp; Giovannetti, B. (2019). Day trading for a living? Working paper. <a href="https://repositorio.fgv.br/items/e87d04fc-4b4c-4a56-ab5a-1c84c1afde1b/full">https://repositorio.fgv.br/items/e87d04fc-4b4c-4a56-ab5a-1c84c1afde1b/full</a></li>
+<li>Business Standard (2025). Net losses of traders in F&amp;O widen in FY25: SEBI study. <a href="https://www.business-standard.com/markets/news/net-losses-of-traders-in-fo-widens-in-fy25-sebi-study-125070701221_1.html">https://www.business-standard.com/markets/news/net-losses-of-traders-in-fo-widens-in-fy25-sebi-study-125070701221_1.html</a></li>
+<li>Jia et al. (2026). Order-level study of Hyperliquid trader outcomes. <em>Advances in Financial Technologies (AFT 2026)</em>, LIPIcs vol. 395, article 36. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol395-aft2026/LIPIcs.AFT.2026.36/LIPIcs.AFT.2026.36.pdf">https://drops.dagstuhl.de/storage/00lipics/lipics-vol395-aft2026/LIPIcs.AFT.2026.36/LIPIcs.AFT.2026.36.pdf</a></li>
+<li>Fama, E. F., &amp; French, K. R. (2010). Luck versus skill in the cross-section of mutual fund returns. <em>Journal of Finance</em>, 65(5), 1915–1947.</li>
+<li>Barras, L., Scaillet, O., &amp; Wermers, R. (2010). False discoveries in mutual fund performance: Measuring luck in estimated alphas. <em>Journal of Finance</em>, 65(1), 179–216. <a href="https://terpconnect.umd.edu/~wermers/FDR_published.pdf">https://terpconnect.umd.edu/~wermers/FDR_published.pdf</a></li>
+<li>Kosowski, R., Timmermann, A., Wermers, R., &amp; White, H. (2006). Can mutual fund "stars" really pick stocks? New evidence from a bootstrap analysis. <em>Journal of Finance</em>, 61(6), 2551–2595.</li>
+<li>Kosowski, R., Naik, N. Y., &amp; Teo, M. (2007). Do hedge funds deliver alpha? A Bayesian and bootstrap analysis. <em>Journal of Financial Economics</em>, 84(1), 229–264.</li>
+<li>Harvey, C. R., &amp; Liu, Y. (2015). Backtesting. <em>Journal of Portfolio Management</em>, 42(1), 13–28. <a href="https://people.duke.edu/~charvey/Research/Published_Papers/P120_Backtesting.PDF">https://people.duke.edu/~charvey/Research/Published_Papers/P120_Backtesting.PDF</a></li>
+<li>Harvey, C. R., &amp; Liu, Y. (2022). Luck versus skill in the cross section of mutual fund returns: Reexamining the evidence. <em>Journal of Finance</em>, 77(3). <a href="https://people.duke.edu/~charvey/Research/Published_Papers/P151_Luck_versus_skill.pdf">https://people.duke.edu/~charvey/Research/Published_Papers/P151_Luck_versus_skill.pdf</a></li>
+<li>Bailey, D. H., &amp; López de Prado, M. (2012). The Sharpe ratio efficient frontier. <em>Journal of Risk</em>, 15(2). <a href="https://www.davidhbailey.com/dhbpapers/sharpe-frontier.pdf">https://www.davidhbailey.com/dhbpapers/sharpe-frontier.pdf</a></li>
+<li>Bailey, D. H., &amp; López de Prado, M. (2014). The deflated Sharpe ratio: Correcting for selection bias, backtest overfitting and non-normality. <em>Journal of Portfolio Management</em>, 40(5). <a href="https://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf">https://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf</a></li>
+<li>Bailey, D. H., Borwein, J. M., López de Prado, M., &amp; Zhu, Q. J. (2014). Pseudo-mathematics and financial charlatanism: The effects of backtest overfitting on out-of-sample performance. <em>Notices of the AMS</em>, 61(5). <a href="https://carmamaths.org/jon/backtest.pdf">https://carmamaths.org/jon/backtest.pdf</a></li>
+<li>Bollen, N. P. B., et al. (forthcoming). Decreasing returns to ranking hedge funds on past performance. <em>Critical Finance Review</em>. <a href="https://cfr.ivo-welch.org/forthcoming/papers/bollen2024decreasing.pdf">https://cfr.ivo-welch.org/forthcoming/papers/bollen2024decreasing.pdf</a></li>
+<li>Benjamini, Y., &amp; Hochberg, Y. (1995). Controlling the false discovery rate: A practical and powerful approach to multiple testing. <em>Journal of the Royal Statistical Society, Series B</em>, 57(1), 289–300.</li>
+<li>Künsch, H. R. (1989). The jackknife and the bootstrap for general stationary observations. <em>Annals of Statistics</em>, 17(3), 1217–1241.</li>
+<li>Efron, B. (2010). <em>Large-Scale Inference: Empirical Bayes Methods for Estimation, Testing, and Prediction</em>. Cambridge University Press.</li>
+<li>Apesteguia, J., Oechssler, J., &amp; Weidenholzer, S. (2020). Copy trading. <em>Management Science</em>, 66(12), 5608–5622. <a href="https://bse.eu/research/publications/copy-trading">https://bse.eu/research/publications/copy-trading</a></li>
+<li>Kawai, et al. (2024). Study of copy trading on a centralised crypto exchange. <em>Proceedings of CHI 2024</em>. <a href="https://www.andrew.cmu.edu/user/nicolasc/publications/Kawai-CHI24.pdf">https://www.andrew.cmu.edu/user/nicolasc/publications/Kawai-CHI24.pdf</a></li>
+<li>YieldFund (2026). Is copy trading profitable? A 90-day multi-exchange study. <a href="https://yieldfund.com/is-copy-trading-profitable-a-90-day-multi-exchange-study">https://yieldfund.com/is-copy-trading-profitable-a-90-day-multi-exchange-study</a></li>
+<li>Gómez-Cram, R., et al. (2026). Skill on Polymarket. As reported by The Block. <a href="https://theblock.co/post/398902/skilled-polymarket-traders-are-a-3-minority-and-everyone-else-funds-their-gains-study">https://theblock.co/post/398902/skilled-polymarket-traders-are-a-3-minority-and-everyone-else-funds-their-gains-study</a></li>
+<li>Akey, P., et al. (2026). Who wins and who loses in prediction markets: Evidence from Polymarket. Working paper. <a href="https://www.carf.e.u-tokyo.ac.jp/en/wp-content/uploads/2026/06/260714_polymarket.pdf">https://www.carf.e.u-tokyo.ac.jp/en/wp-content/uploads/2026/06/260714_polymarket.pdf</a></li>
+<li>Galaxy Research (2026), as reported by Crypto Briefing. <a href="https://cryptobriefing.com/galaxy-research-polymarket-retail-losses/">https://cryptobriefing.com/galaxy-research-polymarket-retail-losses/</a></li>
+<li>Alpha Arena Season 1 results (October–November 2025). iWeaver: <a href="https://www.iweaver.ai/blog/alpha-arena-ai-trading-season-1-results/">https://www.iweaver.ai/blog/alpha-arena-ai-trading-season-1-results/</a> ; Protos: <a href="https://protos.com/llm-crypto-trading-contest-finds-llms-cant-trade-crypto/">https://protos.com/llm-crypto-trading-contest-finds-llms-cant-trade-crypto/</a></li>
+<li>Bloomberg (2026). Wall Street keeps testing AI traders; most are still underperforming. Relayed at <a href="https://www.zerohedge.com/markets/wall-street-keeps-testing-ai-traders-most-are-still-underperforming">https://www.zerohedge.com/markets/wall-street-keeps-testing-ai-traders-most-are-still-underperforming</a></li>
+<li>Lopez-Lira, A., &amp; Tang, Y. (2023). Can ChatGPT forecast stock price movements? Return predictability and large language models. arXiv:2304.07619. <a href="https://arxiv.org/pdf/2304.07619">https://arxiv.org/pdf/2304.07619</a></li>
+<li>Lopez-Lira, A., et al. (2025). On LLM memorisation of financial data and its implications for forecasting backtests. arXiv:2504.14765. <a href="https://arxiv.org/html/2504.14765">https://arxiv.org/html/2504.14765</a></li>
+<li>Detzel, A., Liu, H., Strauss, J., Zhou, G., &amp; Zhu, Y. (2021). Learning and predictability via technical analysis: Evidence from Bitcoin and stocks with hard-to-value fundamentals. <em>Financial Management</em>, 50(1). Summary: <a href="https://www.cxoadvisory.com/currency-trading/timing-bitcoin-with-smas/">https://www.cxoadvisory.com/currency-trading/timing-bitcoin-with-smas/</a></li>
+<li>Hudson, R., &amp; Urquhart, A. (2021). Technical trading and cryptocurrencies. <em>Annals of Operations Research</em>, 297. <a href="https://reading-clone.eprints-hosting.org/85715">https://reading-clone.eprints-hosting.org/85715</a></li>
+<li>Zarattini, C., Pagani, A., &amp; Barbon, A. (2025). Catching crypto trends: A tactical approach for Bitcoin and altcoins. <a href="https://concretumgroup.com/catching-crypto-trends-a-tactical-approach-for-bitcoin-and-altcoins/">https://concretumgroup.com/catching-crypto-trends-a-tactical-approach-for-bitcoin-and-altcoins/</a></li>
+<li>Moskowitz, T. J., Ooi, Y. H., &amp; Pedersen, L. H. (2012). Time series momentum. <em>Journal of Financial Economics</em>, 104(2), 228–250.</li>
+<li>McLean, R. D., &amp; Pontiff, J. (2016). Does academic research destroy stock return predictability? <em>Journal of Finance</em>, 71(1), 5–32.</li>
+<li>Gu, S., Kelly, B., &amp; Xiu, D. (2020). Empirical asset pricing via machine learning. <em>Review of Financial Studies</em>, 33(5), 2223–2273.</li>
+<li>Freqtrade (2026). <a href="https://github.com/freqtrade/freqtrade">https://github.com/freqtrade/freqtrade</a> ; community strategies at <a href="https://github.com/freqtrade/freqtrade-strategies">https://github.com/freqtrade/freqtrade-strategies</a> (commit <code>f3340ce</code>).</li>
+<li>Hyperliquid documentation: fees and API. <a href="https://hyperliquid.gitbook.io/hyperliquid-docs/">https://hyperliquid.gitbook.io/hyperliquid-docs/</a></li>
+<li>Binance: spot fee schedule (regular user, VIP 0); public market data at <a href="https://data.binance.vision">https://data.binance.vision</a></li>
+</ol>
+</main>
+</body>
+</html>

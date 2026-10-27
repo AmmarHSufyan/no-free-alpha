@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this research or code, please cite it as below."
+title: "No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors"
+type: software
+authors:
+  - alias: AmmarHSufyan
+version: 1.0.0
+date-released: 2026-10-27
+license: MIT
+repository-code: "https://github.com/AmmarHSufyan/no-free-alpha"
+url: "https://ammarhsufyan.github.io/no-free-alpha/"
+abstract: >-
+  An end-to-end, cost-aware evaluation of the trading strategies offered to retail crypto investors in 2026:
+  technical-indicator bots, Freqtrade community strategies, an LLM (Claude) trading agent, copy trading of
+  Hyperliquid wallets selected by four finders (including a skill finder using block-bootstrap tests,
+  Benjamini-Hochberg false-discovery-rate control and empirical-Bayes shrinkage) replayed walk-forward on the
+  complete public fill ledger (457 days, 1.5 million wallets), and a daily trend rotation with a survivorship-free
+  universe. After fees and slippage, no strategy beat holding Bitcoin over its full test window; past copy-trading
+  profits did not predict future ones (rank correlation 0.04 over 33,927 wallet-weeks).
+keywords:
+  - cryptocurrency
+  - algorithmic trading
+  - trading bots
+  - backtesting
+  - transaction costs
+  - copy trading
+  - social trading
+  - Hyperliquid
+  - on-chain analytics
+  - smart money
+  - skill versus luck
+  - false discovery rate
+  - large language models
+  - LLM trading agents
+  - AI trading
+  - trend following
+  - walk-forward analysis
+  - Freqtrade
+  - Bitcoin
+  - quantitative finance
+preferred-citation:
+  type: report
+  title: "No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors"
+  authors:
+    - alias: AmmarHSufyan
+  year: 2026
+  month: 10
+  url: "https://ammarhsufyan.github.io/no-free-alpha/"

@@ -1,0 +1,37 @@
+month,set,variant,return_%,leaders_used,liquidated,btc_%
+2025-10-25,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),-16.34703565143174,50,0,-21.770569925400164
+2025-10-25,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",-15.378525640744378,50,0,-21.770569925400164
+2025-10-25,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",-15.137244383998883,50,0,-21.770569925400164
+2025-11-24,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),-6.213077039529558,50,0,0.7551182154557967
+2025-11-24,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",-4.989494079721501,50,0,0.7551182154557967
+2025-11-24,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",-4.679738707423608,50,0,0.7551182154557967
+2025-12-24,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),-4.165460607262084,50,0,2.3499052743385374
+2025-12-24,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",-2.897161590399322,50,0,2.3499052743385374
+2025-12-24,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",-2.57950173716861,50,0,2.3499052743385374
+2026-01-23,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),6.3208802870506675,50,0,-24.11258467532932
+2026-01-23,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",8.802207521995498,50,0,-24.11258467532932
+2026-01-23,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",9.423776258846516,50,0,-24.11258467532932
+2026-02-22,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),5.283925629478858,50,0,4.317182173075906
+2026-02-22,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",8.680732595413488,50,0,4.317182173075906
+2026-02-22,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",9.556625837350596,50,0,4.317182173075906
+2026-03-24,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),5.427637412004294,50,1,10.264019416927717
+2026-03-24,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",8.031830125585593,50,1,10.264019416927717
+2026-03-24,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",8.679119462779529,50,1,10.264019416927717
+2026-04-23,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),-2.8668962947301813,50,0,-3.3614155160564874
+2026-04-23,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",0.790285805306512,50,0,-3.3614155160564874
+2026-04-23,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",1.7159232669030189,50,0,-3.3614155160564874
+2026-05-23,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),12.690179850765372,50,1,-16.190435831663653
+2026-05-23,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",19.9833014845495,50,1,-16.190435831663653
+2026-05-23,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",21.81030750273414,50,1,-16.190435831663653
+2026-06-22,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),9.72912747399004,50,0,5.1117761569480225
+2026-06-22,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",12.302576147660638,50,0,5.1117761569480225
+2026-06-22,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",12.954728257182623,50,0,5.1117761569480225
+2026-07-22,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),2.135563473096269,50,0,9.735832946245093
+2026-07-22,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",3.724570357978374,50,0,9.735832946245093
+2026-07-22,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",4.121026586528731,50,0,9.735832946245093
+2026-08-21,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),6.767966644403778,50,0,11.269911286212908
+2026-08-21,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",10.325575237589636,50,0,11.269911286212908
+2026-08-21,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",11.209517269864744,50,0,11.269911286212908
+2026-09-20,"steady (t-stat, 2/3 months up)",taker fee + slippage (current),-4.612807257760765,50,0,0.8342187263390866
+2026-09-20,"steady (t-stat, 2/3 months up)","maker fee 0.015%, no slippage",-0.48515240832411877,50,0,0.8342187263390866
+2026-09-20,"steady (t-stat, 2/3 months up)","no fees at all, 10s delay",0.5720174699052061,50,0,0.8342187263390866

@@ -1,0 +1,6 @@
+step,return_12m_%
+The leaders' own result,75.04185354722775
+"Our copy, 10 s late, no costs",67.33397099644051
++ maker fee (assumes every order fills),54.24144020869617
++ taker fee and slippage,10.857245374217928
+"Waiting orders, realistic fills (chase after 5 min)",-27.40627102332033

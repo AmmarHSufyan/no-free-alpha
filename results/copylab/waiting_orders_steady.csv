@@ -1,0 +1,49 @@
+month,set,variant,return_%,leaders_used,liquidated,btc_%
+2025-10-25,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),-16.34703565143174,50,0,-21.770569925400164
+2025-10-25,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",-17.42733190130088,50,0,-21.770569925400164
+2025-10-25,"steady (t-stat, 2/3 months up)","waiting orders, else skip",-17.940036437091678,50,0,-21.770569925400164
+2025-10-25,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",-17.42249075152,50,0,-21.770569925400164
+2025-11-24,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),-6.213077039529558,50,0,0.7551182154557967
+2025-11-24,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",-7.657922572205644,50,0,0.7551182154557967
+2025-11-24,"steady (t-stat, 2/3 months up)","waiting orders, else skip",-6.7883769325509435,50,0,0.7551182154557967
+2025-11-24,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",-7.7325709209476905,50,0,0.7551182154557967
+2025-12-24,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),-4.165460607262084,50,0,2.3499052743385374
+2025-12-24,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",-5.500785164480315,50,0,2.3499052743385374
+2025-12-24,"steady (t-stat, 2/3 months up)","waiting orders, else skip",-5.275459342700528,50,0,2.3499052743385374
+2025-12-24,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",-5.388787989136179,50,0,2.3499052743385374
+2026-01-23,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),6.3208802870506675,50,0,-24.11258467532932
+2026-01-23,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",2.4047181775948445,50,0,-24.11258467532932
+2026-01-23,"steady (t-stat, 2/3 months up)","waiting orders, else skip",3.667365463536121,50,0,-24.11258467532932
+2026-01-23,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",2.5626705939375993,50,0,-24.11258467532932
+2026-02-22,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),5.283925629478858,50,0,4.317182173075906
+2026-02-22,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",2.5202092338045823,50,0,4.317182173075906
+2026-02-22,"steady (t-stat, 2/3 months up)","waiting orders, else skip",4.186676913401177,50,0,4.317182173075906
+2026-02-22,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",2.2576228761188366,50,0,4.317182173075906
+2026-03-24,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),5.427637412004294,50,1,10.264019416927717
+2026-03-24,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",0.1869997337813789,50,2,10.264019416927717
+2026-03-24,"steady (t-stat, 2/3 months up)","waiting orders, else skip",2.302281959867214,50,0,10.264019416927717
+2026-03-24,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",0.2386771484315764,50,2,10.264019416927717
+2026-04-23,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),-2.8668962947301813,50,0,-3.3614155160564874
+2026-04-23,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",-6.1530606947747035,50,0,-3.3614155160564874
+2026-04-23,"steady (t-stat, 2/3 months up)","waiting orders, else skip",-2.3751455139105593,50,0,-3.3614155160564874
+2026-04-23,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",-6.256524963875076,50,0,-3.3614155160564874
+2026-05-23,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),12.690179850765372,50,1,-16.190435831663653
+2026-05-23,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",3.3286646940743125,50,1,-16.190435831663653
+2026-05-23,"steady (t-stat, 2/3 months up)","waiting orders, else skip",0.5740046760547068,50,1,-16.190435831663653
+2026-05-23,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",-0.5355390312448471,50,1,-16.190435831663653
+2026-06-22,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),9.72912747399004,50,0,5.1117761569480225
+2026-06-22,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",7.406680847452729,50,0,5.1117761569480225
+2026-06-22,"steady (t-stat, 2/3 months up)","waiting orders, else skip",0.9631024678161904,50,0,5.1117761569480225
+2026-06-22,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",6.949502818926656,50,0,5.1117761569480225
+2026-07-22,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),2.135563473096269,50,0,9.735832946245093
+2026-07-22,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",0.5132570371400913,50,0,9.735832946245093
+2026-07-22,"steady (t-stat, 2/3 months up)","waiting orders, else skip",0.8149229071299002,50,0,9.735832946245093
+2026-07-22,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",0.2611816946530121,50,0,9.735832946245093
+2026-08-21,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),6.767966644403778,50,0,11.269911286212908
+2026-08-21,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",-1.115951652373337,50,0,11.269911286212908
+2026-08-21,"steady (t-stat, 2/3 months up)","waiting orders, else skip",-2.362640733859467,50,1,11.269911286212908
+2026-08-21,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",-2.4080539067266926,50,0,11.269911286212908
+2026-09-20,"steady (t-stat, 2/3 months up)",instant orders (taker 0.045% + slippage),-4.612807257760765,50,0,0.8342187263390866
+2026-09-20,"steady (t-stat, 2/3 months up)","waiting orders, else chase after 5 min",-7.472183270593891,50,0,0.8342187263390866
+2026-09-20,"steady (t-stat, 2/3 months up)","waiting orders, else skip",-6.236212483380255,50,0,0.8342187263390866
+2026-09-20,"steady (t-stat, 2/3 months up)","waiting orders 15 min, else chase",-7.910963892042688,50,0,0.8342187263390866
