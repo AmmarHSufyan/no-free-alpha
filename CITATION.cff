@@ -7,6 +7,7 @@ authors:
     given-names: Ammar H.
     alias: AmmarHSufyan
 version: 1.0.1
+doi: 10.5281/zenodo.23680085
 date-released: 2026-10-27
 license: MIT
 repository-code: "https://github.com/AmmarHSufyan/no-free-alpha"
@@ -48,5 +49,6 @@ preferred-citation:
       given-names: Ammar H.
       alias: AmmarHSufyan
   year: 2026
+  doi: 10.5281/zenodo.23680085
   month: 10
   url: "https://ammarhsufyan.github.io/no-free-alpha/"
