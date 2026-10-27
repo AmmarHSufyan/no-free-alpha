@@ -78,7 +78,7 @@ cached.
 ```bibtex
 @techreport{nofreealpha2026,
   title  = {No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading for Retail Crypto Investors},
-  author = {AmmarHSufyan},
+  author = {Sufyan, Ammar H.},
   year   = {2026},
   month  = {10},
   url    = {https://github.com/AmmarHSufyan/no-free-alpha}

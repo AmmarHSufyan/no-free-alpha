@@ -24,7 +24,7 @@ PAPER, DOCS = ROOT / "paper", ROOT / "docs"
 
 SITE = "https://ammarhsufyan.github.io/no-free-alpha/"
 REPO = "https://github.com/AmmarHSufyan/no-free-alpha"
-AUTHOR = "AmmarHSufyan"
+AUTHOR, HANDLE = "Ammar H. Sufyan", "AmmarHSufyan"
 DATE = "2026-10-27"
 TITLE = ("No Free Alpha: Transaction Costs, Luck, and the Limits of Algorithmic, LLM-Driven and Copy Trading "
          "for Retail Crypto Investors")
@@ -88,7 +88,7 @@ def head(abstract: str) -> str:
 
     ld = {
         "@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": TITLE, "name": TITLE,
-        "author": {"@type": "Person", "name": AUTHOR, "url": f"https://github.com/{AUTHOR}"},
+        "author": {"@type": "Person", "name": AUTHOR, "alternateName": HANDLE, "url": f"https://github.com/{HANDLE}"},
         "datePublished": DATE, "inLanguage": "en", "isAccessibleForFree": True, "url": SITE, "image": IMAGE,
         "abstract": abstract, "keywords": ", ".join(KEYWORDS), "license": "https://opensource.org/licenses/MIT",
         "encoding": {"@type": "MediaObject", "contentUrl": SITE + "no-free-alpha.pdf", "encodingFormat": "application/pdf"},
@@ -108,7 +108,7 @@ def head(abstract: str) -> str:
         meta("twitter:card", "summary_large_image"), meta("twitter:title", PAGE_TITLE),
         meta("twitter:description", DESCRIPTION), meta("twitter:image", IMAGE),
         # Google Scholar (Highwire Press tags)
-        meta("citation_title", TITLE), meta("citation_author", AUTHOR),
+        meta("citation_title", TITLE), meta("citation_author", "Sufyan, Ammar H."),
         meta("citation_publication_date", DATE.replace("-", "/")), meta("citation_online_date", DATE.replace("-", "/")),
         meta("citation_technical_report_institution", "Independent research"),
         meta("citation_language", "en"), meta("citation_abstract", abstract),

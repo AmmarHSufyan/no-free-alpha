@@ -2,7 +2,7 @@
 
 **Evidence from cost-aware backtests and a walk-forward replay of 1.5 million Hyperliquid wallets, 2019–2026**
 
-AmmarHSufyan · Independent research · October 2026
+Ammar H. Sufyan · Independent research · October 2026
 
 *Code, result files and the scripts that rebuild every figure: https://github.com/AmmarHSufyan/no-free-alpha .
 This paper is not investment advice.*
